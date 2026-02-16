@@ -9,7 +9,7 @@ namespace DesignPatternChallenge
 {
     // Contexto: Sistema CMS que precisa renderizar menus complexos com múltiplos níveis
     // Alguns itens são links simples, outros são menus que contêm mais itens
-    
+
     public class MenuItem
     {
         public string Title { get; set; }
@@ -78,14 +78,14 @@ namespace DesignPatternChallenge
         public int CountItems()
         {
             int count = 0;
-            
+
             count += Items.Count;
-            
+
             foreach (var subGroup in SubGroups)
             {
                 count += subGroup.CountItems();
             }
-            
+
             return count;
         }
 
